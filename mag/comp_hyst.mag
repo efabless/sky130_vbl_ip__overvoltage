@@ -1467,7 +1467,7 @@ rect 16211 -5141 16388 -3628
 rect 16211 -5220 16231 -5141
 rect 16370 -5220 16388 -5141
 rect 16211 -5230 16388 -5220
-use sky130_fd_pr__diode_pw2nd_05v5_F6RBXN  D1
+use sky130_fd_pr__diode_pw2nd_05v5_F6RBXN  D1 paramcells
 timestamp 1713221383
 transform 0 1 14263 -1 0 -5180
 box -183 -208 183 208
@@ -1483,7 +1483,7 @@ use trans_gate  x1
 timestamp 1713724750
 transform 1 0 5910 0 1 -2537
 box 1220 -2096 2736 522
-use sky130_fd_pr__nfet_g5v0d10v5_6975WM  XM1[0]
+use sky130_fd_pr__nfet_g5v0d10v5_6975WM  XM1[0] paramcells
 timestamp 1713221383
 transform 1 0 15281 0 1 -2103
 box -1028 -388 1028 388
@@ -1499,7 +1499,7 @@ use sky130_fd_pr__nfet_g5v0d10v5_6975WM  XM2[1]
 timestamp 1713221383
 transform 1 0 15281 0 1 -3395
 box -1028 -388 1028 388
-use sky130_fd_pr__pfet_01v8_GGMWVD  XM3[0]
+use sky130_fd_pr__pfet_01v8_GGMWVD  XM3[0] paramcells
 timestamp 1713221383
 transform 1 0 15096 0 1 1181
 box -996 -319 996 319
@@ -1507,15 +1507,15 @@ use sky130_fd_pr__pfet_01v8_GGMWVD  XM3[1]
 timestamp 1713221383
 transform 1 0 15096 0 1 649
 box -996 -319 996 319
-use sky130_fd_pr__pfet_01v8_CDT3CS  XM4[0]
+use sky130_fd_pr__pfet_01v8_CDT3CS  XM4[0] paramcells
 timestamp 1713221383
 transform 1 0 7435 0 1 649
 box -1796 -319 1796 319
-use sky130_fd_pr__pfet_01v8_XTWSDC  XM4[1]
+use sky130_fd_pr__pfet_01v8_XTWSDC  XM4[1] paramcells
 timestamp 1713221383
 transform 1 0 7435 0 1 117
 box -1796 -319 1796 319
-use sky130_fd_pr__pfet_01v8_GGMWVD  XM5[0]
+use sky130_fd_pr__pfet_01v8_GGMWVD  XM5[0] paramcells
 timestamp 1713221383
 transform 1 0 15096 0 1 1713
 box -996 -319 996 319
@@ -1543,19 +1543,19 @@ use sky130_fd_pr__pfet_01v8_GGMWVD  XM7
 timestamp 1713221383
 transform 1 0 11252 0 1 -1307
 box -996 -319 996 319
-use sky130_fd_pr__nfet_01v8_697RXD  XM8
+use sky130_fd_pr__nfet_01v8_697RXD  XM8 paramcells
 timestamp 1713221383
 transform 1 0 11252 0 1 -2060
 box -996 -310 996 310
-use sky130_fd_pr__pfet_01v8_3HBZVM  XM9
+use sky130_fd_pr__pfet_01v8_3HBZVM  XM9 paramcells
 timestamp 1713221383
 transform 1 0 12908 0 1 -1507
 box -296 -519 296 519
-use sky130_fd_pr__nfet_01v8_C8TQ3N  XM10
+use sky130_fd_pr__nfet_01v8_C8TQ3N  XM10 paramcells
 timestamp 1713221383
 transform 1 0 12908 0 1 -2608
 box -296 -510 296 510
-use sky130_fd_pr__nfet_01v8_7ZF23Z  XM11
+use sky130_fd_pr__nfet_01v8_7ZF23Z  XM11 paramcells
 timestamp 1713221383
 transform 1 0 11208 0 1 -3572
 box -2196 -310 2196 310
@@ -1563,7 +1563,7 @@ use sky130_fd_pr__nfet_01v8_7ZF23Z  XM12
 timestamp 1713221383
 transform 1 0 11208 0 1 -4086
 box -2196 -310 2196 310
-use sky130_fd_pr__nfet_01v8_V433WY  XM13
+use sky130_fd_pr__nfet_01v8_V433WY  XM13 paramcells
 timestamp 1713221383
 transform 1 0 9858 0 1 -2786
 box -496 -310 496 310
@@ -1571,7 +1571,7 @@ use sky130_fd_pr__nfet_01v8_V433WY  XM14
 timestamp 1713221383
 transform 1 0 10744 0 1 -2786
 box -496 -310 496 310
-use sky130_fd_pr__pfet_01v8_C2YSV5  XM15
+use sky130_fd_pr__pfet_01v8_C2YSV5  XM15 paramcells
 timestamp 1713221383
 transform 1 0 8260 0 1 -1307
 box -496 -319 496 319
@@ -1591,7 +1591,7 @@ use sky130_fd_pr__nfet_01v8_V433WY  XM19
 timestamp 1713221383
 transform 1 0 9508 0 1 -2020
 box -496 -310 496 310
-use sky130_fd_pr__pfet_01v8_J2L9E5  XMD1[0]
+use sky130_fd_pr__pfet_01v8_J2L9E5  XMD1[0] paramcells
 timestamp 1713221383
 transform 1 0 13910 0 1 2245
 box -296 -319 296 319
@@ -1671,7 +1671,7 @@ use sky130_fd_pr__pfet_01v8_J2L9E5  XMD1[19]
 timestamp 1713221383
 transform 1 0 12907 0 1 -415
 box -296 -319 296 319
-use sky130_fd_pr__pfet_01v8_G3L97A  XMD8[0]
+use sky130_fd_pr__pfet_01v8_G3L97A  XMD8[0] paramcells
 timestamp 1713221383
 transform 1 0 15096 0 1 2245
 box -996 -319 996 319
@@ -1703,7 +1703,7 @@ use sky130_fd_pr__pfet_01v8_XTWSDC  XMD16[5]
 timestamp 1713221383
 transform 1 0 10921 0 1 -415
 box -1796 -319 1796 319
-use sky130_fd_pr__nfet_g5v0d10v5_CD9S2Z  XMDN1[0]
+use sky130_fd_pr__nfet_g5v0d10v5_CD9S2Z  XMDN1[0] paramcells
 timestamp 1713221383
 transform 1 0 13943 0 1 -1487
 box -328 -358 328 358
@@ -1719,7 +1719,7 @@ use sky130_fd_pr__nfet_g5v0d10v5_CD9S2Z  XMDN1[3]
 timestamp 1713221383
 transform 1 0 16619 0 1 -4657
 box -328 -358 328 358
-use sky130_fd_pr__nfet_g5v0d10v5_DEN7YK  XMDN8[0]
+use sky130_fd_pr__nfet_g5v0d10v5_DEN7YK  XMDN8[0] paramcells
 timestamp 1713221383
 transform 1 0 15281 0 1 -1487
 box -1028 -358 1028 358
@@ -1727,7 +1727,7 @@ use sky130_fd_pr__nfet_g5v0d10v5_DEN7YK  XMDN8[1]
 timestamp 1713221383
 transform 1 0 15281 0 1 -4657
 box -1028 -358 1028 358
-use sky130_fd_pr__nfet_g5v0d10v5_4T6WVE  XMDN13[0]
+use sky130_fd_pr__nfet_g5v0d10v5_4T6WVE  XMDN13[0] paramcells
 timestamp 1713221383
 transform 1 0 13943 0 1 -2103
 box -328 -388 328 388

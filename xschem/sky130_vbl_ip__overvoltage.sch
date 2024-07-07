@@ -197,27 +197,27 @@ C {devices/ipin.sym} 160 -485 0 0 {name=p8 lab=vtrip[1]}
 C {devices/ipin.sym} 160 -280 0 0 {name=p9 lab=vtrip[0]}
 C {devices/ipin.sym} 1435 -670 0 0 {name=p39 lab=ibias}
 C {comp_hyst.sym} 1445 -475 0 0 {name=x1}
-C {multiplexer.sym} 1120 -555 0 0 {name=x2}
-C {voltage_divider.sym} 710 -635 0 0 {name=x3}
-C {level_shifter.sym} 290 -895 0 0 {name=x4}
+C {ov_multiplexer.sym} 1120 -555 0 0 {name=x2}
+C {ov_voltage_divider.sym} 710 -635 0 0 {name=x3}
+C {ov_level_shifter.sym} 290 -895 0 0 {name=x4}
 C {devices/lab_pin.sym} 250 -985 0 0 {name=p7 sig_type=std_logic lab=dvdd}
 C {devices/lab_pin.sym} 330 -985 0 1 {name=p35 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 330 -805 0 1 {name=p37 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 420 -710 0 1 {name=p11 sig_type=std_logic lab=B}
 C {devices/lab_pin.sym} 420 -660 0 1 {name=p12 sig_type=std_logic lab=NotB}
-C {level_shifter.sym} 290 -690 0 0 {name=x5}
+C {ov_level_shifter.sym} 290 -690 0 0 {name=x5}
 C {devices/lab_pin.sym} 250 -780 0 0 {name=p14 sig_type=std_logic lab=dvdd}
 C {devices/lab_pin.sym} 330 -780 0 1 {name=p15 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 330 -600 0 1 {name=p16 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 420 -505 0 1 {name=p19 sig_type=std_logic lab=C}
 C {devices/lab_pin.sym} 420 -455 0 1 {name=p20 sig_type=std_logic lab=NotC}
-C {level_shifter.sym} 290 -485 0 0 {name=x6}
+C {ov_level_shifter.sym} 290 -485 0 0 {name=x6}
 C {devices/lab_pin.sym} 250 -575 0 0 {name=p34 sig_type=std_logic lab=dvdd}
 C {devices/lab_pin.sym} 330 -575 0 1 {name=p38 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 330 -395 0 1 {name=p40 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 420 -300 0 1 {name=p21 sig_type=std_logic lab=D}
 C {devices/lab_pin.sym} 420 -250 0 1 {name=p22 sig_type=std_logic lab=NotD}
-C {level_shifter.sym} 290 -280 0 0 {name=x7}
+C {ov_level_shifter.sym} 290 -280 0 0 {name=x7}
 C {devices/lab_pin.sym} 250 -370 0 0 {name=p42 sig_type=std_logic lab=dvdd}
 C {devices/lab_pin.sym} 330 -370 0 1 {name=p43 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 330 -190 0 1 {name=p44 sig_type=std_logic lab=avss}

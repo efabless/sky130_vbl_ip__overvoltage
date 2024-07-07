@@ -1,19 +1,19 @@
-** sch_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/sky130_vbl_ip__overvoltage.sch
-.subckt sky130_vbl_ip__overvoltage avdd dvdd ena vtrip[3] ibias vtrip[2] ovout vbg vtrip[1] vtrip[0] dvss avss
+** sch_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/sky130_vbl_ip__overvoltage.sch
+.subckt sky130_vbl_ip__overvoltage ovout vtrip[0] dvss avss avdd dvdd ibias vbg ena vtrip[3] vtrip[2] vtrip[1]
 *.PININFO avdd:B dvdd:B ena:I avss:B vtrip[3]:I ovout:O vbg:I vtrip[2]:I vtrip[1]:I vtrip[0]:I ibias:I dvss:B
 x1 dvdd ovout vbg net17 ena ibias dvss comp_hyst
 x2 net2 net3 net4 net5 net6 net7 net8 avdd avss net9 A NotA B NotB C net17 NotC D NotD net1 net10 net11 net12 net13 net14 net15
-+ net16 multiplexer
-x3 avdd net2 net3 net4 net5 net6 net7 net8 net9 net1 net10 net11 net12 net13 net14 net15 net16 avss ena voltage_divider
-x4 avdd dvdd vtrip[3] A NotA avss dvss level_shifter
-x5 avdd dvdd vtrip[2] B NotB avss dvss level_shifter
-x6 avdd dvdd vtrip[1] C NotC avss dvss level_shifter
-x7 avdd dvdd vtrip[0] D NotD avss dvss level_shifter
++ net16 ov_multiplexer
+x3 avdd net2 net3 net4 net5 net6 net7 net8 net9 net1 net10 net11 net12 net13 net14 net15 net16 avss ena ov_voltage_divider
+x4 avdd dvdd vtrip[3] A NotA avss dvss ov_level_shifter
+x5 avdd dvdd vtrip[2] B NotB avss dvss ov_level_shifter
+x6 avdd dvdd vtrip[1] C NotC avss dvss ov_level_shifter
+x7 avdd dvdd vtrip[0] D NotD avss dvss ov_level_shifter
 .ends
 
 * expanding   symbol:  comp_hyst.sym # of pins=7
-** sym_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/comp_hyst.sym
-** sch_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/comp_hyst.sch
+** sym_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/comp_hyst.sym
+** sch_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/comp_hyst.sch
 .subckt comp_hyst dvdd out vref vin ena ibias dvss
 *.PININFO dvdd:B vref:I vin:I out:O ibias:I ena:I dvss:B
 XM5[0] net3 net4 dvdd dvdd sky130_fd_pr__pfet_01v8 L=8 W=1 nf=1 m=1
@@ -92,11 +92,11 @@ XD2 dvss ena sky130_fd_pr__diode_pw2nd_05v5 area=0.315e12 perim=4e6
 .ends
 
 
-* expanding   symbol:  multiplexer.sym # of pins=27
-** sym_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/multiplexer.sym
-** sch_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/multiplexer.sch
-.subckt multiplexer in_0000 in_0001 in_0010 in_0011 in_0100 in_0101 in_0110 avdd vss in_0111 vtrip_3 vtrip_3_b vtrip_2 vtrip_2_b
-+ vtrip_1 out vtrip_1_b vtrip_0 vtrip_0_b in_1000 in_1001 in_1010 in_1011 in_1100 in_1101 in_1110 in_1111
+* expanding   symbol:  ov_multiplexer.sym # of pins=27
+** sym_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/ov_multiplexer.sym
+** sch_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/ov_multiplexer.sch
+.subckt ov_multiplexer in_0000 in_0001 in_0010 in_0011 in_0100 in_0101 in_0110 avdd vss in_0111 vtrip_3 vtrip_3_b vtrip_2
++ vtrip_2_b vtrip_1 out vtrip_1_b vtrip_0 vtrip_0_b in_1000 in_1001 in_1010 in_1011 in_1100 in_1101 in_1110 in_1111
 *.PININFO in_0000:I in_0001:I in_0010:I in_0011:I in_0100:I in_0101:I in_0110:I in_0111:I in_1000:I in_1001:I in_1010:I in_1011:I
 *+ in_1110:I in_1111:I in_1100:I in_1101:I out:O vtrip_3:I vtrip_3_b:I vtrip_2:I vtrip_2_b:I vtrip_1:I vtrip_1_b:I vtrip_0:I vtrip_0_b:I
 *+ avdd:B vss:B
@@ -145,10 +145,10 @@ XD12 vss vtrip_3_b sky130_fd_pr__diode_pw2nd_05v5 area=3.15e11 perim=4e6
 .ends
 
 
-* expanding   symbol:  voltage_divider.sym # of pins=19
-** sym_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/voltage_divider.sym
-** sch_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/voltage_divider.sch
-.subckt voltage_divider avdd out_0000 out_0001 out_0010 out_0011 out_0100 out_0101 out_0110 out_0111 out_1000 out_1001 out_1010
+* expanding   symbol:  ov_voltage_divider.sym # of pins=19
+** sym_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/ov_voltage_divider.sym
+** sch_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/ov_voltage_divider.sch
+.subckt ov_voltage_divider avdd out_0000 out_0001 out_0010 out_0011 out_0100 out_0101 out_0110 out_0111 out_1000 out_1001 out_1010
 + out_1011 out_1100 out_1101 out_1110 out_1111 avss ena
 *.PININFO ena:I avss:B avdd:B out_1111:O out_1110:O out_1101:O out_1100:O out_1011:O out_1010:O out_1001:O out_1000:O out_0111:O
 *+ out_0110:O out_0101:O out_0100:O out_0011:O out_0010:O out_0001:O out_0000:O
@@ -297,10 +297,10 @@ XD1 avss ena sky130_fd_pr__diode_pw2nd_05v5 area=3.15e11 perim=4e6
 .ends
 
 
-* expanding   symbol:  level_shifter.sym # of pins=7
-** sym_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/level_shifter.sym
-** sch_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/level_shifter.sch
-.subckt level_shifter avdd dvdd in out out_b avss dvss
+* expanding   symbol:  ov_level_shifter.sym # of pins=7
+** sym_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/ov_level_shifter.sym
+** sch_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/ov_level_shifter.sch
+.subckt ov_level_shifter avdd dvdd in out out_b avss dvss
 *.PININFO avdd:B out_b:O out:O avss:B dvdd:B in:I dvss:B
 XM1 in_b in dvss dvss sky130_fd_pr__nfet_01v8 L=3 W=1 nf=1 m=1
 XM2 in_b in dvdd dvdd sky130_fd_pr__pfet_01v8 L=3 W=1 nf=1 m=1
@@ -313,8 +313,8 @@ XD3 dvss in sky130_fd_pr__diode_pw2nd_05v5 area=0.315e12 perim=4e6
 
 
 * expanding   symbol:  trans_gate.sym # of pins=6
-** sym_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/trans_gate.sym
-** sch_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/trans_gate.sch
+** sym_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/trans_gate.sym
+** sch_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/trans_gate.sch
 .subckt trans_gate in ena_b ena avdd vss out
 *.PININFO avdd:B vss:B ena:I ena_b:I in:I out:O
 XM1 in ena out vss sky130_fd_pr__nfet_g5v0d10v5 L=5 W=1 nf=1 m=1
@@ -323,8 +323,8 @@ XM2 in ena_b out avdd sky130_fd_pr__pfet_g5v0d10v5 L=5 W=6 nf=1 m=1
 
 
 * expanding   symbol:  trans_gate_mux.sym # of pins=6
-** sym_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/trans_gate_mux.sym
-** sch_path: /home/vblabs/Videos/sky130_vbl_ip__overvoltage/xschem/trans_gate_mux.sch
+** sym_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/trans_gate_mux.sym
+** sch_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_vbl_ip__overvoltage/xschem/trans_gate_mux.sch
 .subckt trans_gate_mux in ena_b ena avdd vss out
 *.PININFO avdd:B vss:B ena:I ena_b:I in:I out:O
 XM1 in ena out vss sky130_fd_pr__nfet_g5v0d10v5 L=3 W=1 nf=1 m=1
