@@ -5,13 +5,11 @@ cace/*.sym
 ngspice/*
 spice/*
 plots/*
-xschem/xschemrc
 xschem/*.spice
 mag/*.ext
 mag/*.res.ext
 mag/*.nodes
 mag/*.sim
-mag/.magicrc
 .spiceinit
 
 blocks/comp_hyst/cace/*.spice
