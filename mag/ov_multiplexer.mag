@@ -1087,7 +1087,7 @@ rect -99 886 2046 887
 rect -99 786 1845 886
 rect 2045 786 2046 886
 rect -99 785 2046 786
-use sky130_fd_pr__diode_pw2nd_05v5_F6RBXN  sky130_fd_pr__diode_pw2nd_05v5_F6RBXN_0
+use sky130_fd_pr__diode_pw2nd_05v5_F6RBXN  sky130_fd_pr__diode_pw2nd_05v5_F6RBXN_0 paramcells
 timestamp 1713221383
 transform 1 0 1406 0 1 12680
 box -183 -208 183 208

@@ -1,0 +1,543 @@
+#this is an initial yaml file supporting physical checks 
+name: sky130_vbl_ip__overvoltage
+description: Overvoltage detector with 4-bit selectable trip point.
+PDK: sky130A
+cace_format: 5.2
+authorship:
+  designer: Lucas Daudt Franck, William Carrara Orlato, Toni Robert Trigoso Tejada
+  company: Von Braun Labs
+  creation_date: March 20, 2024
+  license: Apache 2.0
+paths:
+  root: ..
+  documentation: docs
+  schematic: xschem
+  magic: mag
+  layout: gds
+  netlist: netlist
+pins:
+  avdd:
+    description: Analog power supply
+    type: power
+    direction: inout
+    Vmin:
+    - '3.0'
+    - V
+    Vmax:
+    - '5.5'
+    - V
+  dvdd:
+    description: Digital power supply
+    type: power
+    direction: inout
+    Vmin:
+    - '1.65'
+    - V
+    Vmax:
+    - '1.95'
+    - V
+  avss:
+    description: Analog ground
+    type: ground
+    direction: inout
+    Vmin:
+    - '-0.3'
+    - V
+    Vmax:
+    - '0.3'
+    - V
+  dvss:
+    description: Digital ground
+    type: ground
+    direction: inout
+    Vmin:
+    - '-0.3'
+    - V
+    Vmax:
+    - '0.3'
+    - V
+  ena:
+    description: Enable input (active high)
+    type: digital
+    direction: input
+    Vmin: vss
+    Vmax: dvdd
+  vbg:
+    description: Bandgap reference voltage
+    type: signal
+    direction: input
+    Vmin:
+    - '1.18'
+    - V
+    Vmax:
+    - '1.22'
+    - V
+  ibias:
+    description: Input bias current
+    type: signal
+    direction: input
+    Vmin:
+    - '588'
+    - nA
+    Vmax:
+    - '612'
+    - nA
+  ovout:
+    description: Overvoltage alarm output (active high)
+    type: digital
+    direction: output
+    Vmin: vss
+    Vmax: vdd
+  vtrip[3:0]:
+    description: Digital trip point selection (4 bits)
+    type: digital
+    direction: input
+    Vmin: vss
+    Vmax: dvdd
+default_conditions:
+  Vavdd:
+    description: Analog power supply voltage
+    display: avdd
+    unit: V
+    minimum: '3.0'
+    typical: '3.3'
+    maximum: '6.0'
+  Vdvdd:
+    description: Digital power supply voltage
+    display: dvdd
+    unit: V
+    minimum: '1.65'
+    typical: '1.80'
+    maximum: '1.95'
+  Rout:
+    description: Output load resistance
+    display: RLoad
+    unit: MΩ
+    typical: '1'
+  Cout:
+    description: Output load capacitance
+    display: CLoad
+    unit: pF
+    typical: '1'
+  ena:
+    description: Overvoltage detector enable
+    display: ena
+    typical: '1'
+  Vbg:
+    description: Bandgap reference voltage
+    display: Vbg
+    unit: V
+    typical: '1.20'
+  Ibias:
+    description: Input bias current
+    display: Ibias
+    unit: nA
+    typical: '600'
+  vtrip[3:0]:
+    description: Trip point selection
+    display: vtrip[3:0]
+    minimum: '0000'
+    typical: '1000'
+    maximum: '1111'
+  temperature:
+    description: Ambient temperature
+    display: Temp
+    unit: °C
+    minimum: '-40'
+    typical: '25'
+    maximum: '85'
+  corner:
+    description: Process corner
+    display: Corner
+    enumerate:
+    - ss
+    - tt
+    - ff
+    - sf
+    - fs
+parameters:
+  idc_enabled:
+    description: Current draw through analog and digital supplies, overvoltage detector
+      enabled
+    display: DC Current (enabled)
+    unit: µA
+    spec:
+      minimum:
+        value: '5'
+      typical:
+        value: '10'
+      maximum:
+        value: '20'
+        fail: true
+    conditions:
+      ena:
+        typical: '1'
+      Vavdd:
+        minimum: '3.0'
+        typical: '3.3'
+        maximum: '5.5'
+    tool:
+      ngspice:
+        template: tb_dccurrent.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: idc_enabled
+  idc_disabled:
+    description: Current draw through analog and digital supplies, overvoltage detector
+      disabled
+    display: DC Current (disabled)
+    unit: nA
+    spec:
+      minimum:
+        value: '0.1'
+      typical:
+        value: '0.5'
+      maximum:
+        value: '1'
+        fail: true
+    conditions:
+      ena:
+        typical: '0'
+      Vavdd:
+        minimum: '3.0'
+        typical: '3.3'
+        maximum: '5.5'
+    tool:
+      ngspice:
+        template: tb_dccurrent.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: idc_disabled
+  resptime:
+    description: Time to trigger the alarm after exceeding threshold
+    display: Response Time
+    unit: µs
+    spec:
+      minimum:
+        value: '10'
+      typical:
+        value: '20'
+      maximum:
+        value: '50'
+        fail: true
+    conditions:
+      Tramp:
+        description: Voltage ramp risetime
+        display: Tramp
+        unit: µs
+        minimum: '10'
+        typical: '35'
+        maximum: '60'
+    tool:
+      ngspice:
+        template: tb_resptime.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: resptime
+  vhyst:
+    description: Hysteresis Voltage (prevent rapid on/off around threshold)
+    display: Hysteresis Voltage
+    unit: V
+    spec:
+      minimum:
+        value: '0.1'
+        fail: true
+      typical:
+        value: '0.2'
+      maximum:
+        value: '0.3'
+        fail: true
+    conditions:
+      vtrip[3:0]:
+        enumerate:
+        - '0000'
+        - '1111'
+    tool:
+      ngspice:
+        template: tb_vhyst.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: vhyst
+  vhyst_mm:
+    description: Hysteresis Voltage (prevent rapid on/off around threshold)
+    display: Hysteresis Voltage (MM)
+    unit: V
+    spec:
+      minimum:
+        value: '0.1'
+        fail: true
+      typical:
+        value: '0.2'
+      maximum:
+        value: '0.3'
+        fail: true
+    conditions:
+      vtrip[3:0]:
+        enumerate:
+        - '0000'
+        - '1111'
+      corner:
+        enumerate:
+        - ss_mm
+        - tt_mm
+        - ff_mm
+      iterations:
+        description: Iterations to run
+        display: Iterations
+        minimum: '1'
+        maximum: '100'
+        step: linear
+        stepsize: '1'
+    tool:
+      ngspice:
+        template: tb_vhyst.sch
+        collate: iterations
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: vhyst_mm
+  vhyst_mc:
+    description: Hysteresis Voltage (prevent rapid on/off around threshold)
+    display: Hysteresis Voltage (MC)
+    unit: V
+    spec:
+      minimum:
+        value: '0.1'
+        fail: true
+      typical:
+        value: '0.2'
+      maximum:
+        value: '0.3'
+        fail: true
+    conditions:
+      vtrip[3:0]:
+        enumerate:
+        - '0000'
+        - '1111'
+      corner:
+        typical: mc
+      iterations:
+        description: Iterations to run
+        display: Iterations
+        minimum: '1'
+        maximum: '100'
+        step: linear
+        stepsize: '1'
+    tool:
+      ngspice:
+        template: tb_vhyst.sch
+        collate: iterations
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: vhyst_mc
+  vacc:
+    description: Accuracy at the alarm threshold
+    display: Accuracy
+    unit: mV
+    spec:
+      minimum:
+        value: '-100'
+        fail: true
+      typical:
+        value: '0'
+      maximum:
+        value: '100'
+        fail: true
+    conditions:
+      vtrip[3:0]:
+        enumerate:
+        - '0000'
+        - '0001'
+        - '0010'
+        - '0011'
+        - '0100'
+        - '0101'
+        - '0110'
+        - '0111'
+        - '1000'
+        - '1001'
+        - '1010'
+        - '1011'
+        - '1100'
+        - '1101'
+        - '1110'
+        - '1111'
+    tool:
+      ngspice:
+        template: tb_vacc.sch
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: vacc
+  vacc_mm:
+    description: Accuracy at the alarm threshold
+    display: Accuracy (MM)
+    unit: mV
+    spec:
+      minimum:
+        value: '-100'
+        fail: true
+      typical:
+        value: '0'
+      maximum:
+        value: '100'
+        fail: true
+    conditions:
+      vtrip[3:0]:
+        enumerate:
+        - '0000'
+        - '0001'
+        - '0010'
+        - '0011'
+        - '0100'
+        - '0101'
+        - '0110'
+        - '0111'
+        - '1000'
+        - '1001'
+        - '1010'
+        - '1011'
+        - '1100'
+        - '1101'
+        - '1110'
+        - '1111'
+      corner:
+        enumerate:
+        - ss_mm
+        - tt_mm
+        - ff_mm
+      iterations:
+        description: Iterations to run
+        display: Iterations
+        minimum: '1'
+        maximum: '100'
+        step: linear
+        stepsize: '1'
+    tool:
+      ngspice:
+        template: tb_vacc.sch
+        collate: iterations
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: vacc_mm
+  vacc_mc:
+    description: Accuracy at the alarm threshold
+    display: Accuracy (MC)
+    unit: mV
+    spec:
+      minimum:
+        value: '-100'
+        fail: true
+      typical:
+        value: '0'
+      maximum:
+        value: '100'
+        fail: true
+    conditions:
+      vtrip[3:0]:
+        enumerate:
+        - '0000'
+        - '0001'
+        - '0010'
+        - '0011'
+        - '0100'
+        - '0101'
+        - '0110'
+        - '0111'
+        - '1000'
+        - '1001'
+        - '1010'
+        - '1011'
+        - '1100'
+        - '1101'
+        - '1110'
+        - '1111'
+      corner:
+        typical: mc
+      iterations:
+        description: Iterations to run
+        display: Iterations
+        minimum: '1'
+        maximum: '100'
+        step: linear
+        stepsize: '1'
+    tool:
+      ngspice:
+        template: tb_vacc.sch
+        collate: iterations
+        format: ascii
+        suffix: .data
+        variables:
+        - result
+    name: vacc_mc
+
+  magic_area:
+    spec:
+      area:
+        display: Area
+        description: Total circuit layout area
+        unit: µm²
+        maximum:
+          value: any
+      width:
+        display: Width
+        description: Total circuit layout width
+        unit: µm
+        maximum:
+          value: any
+      height:
+        display: Height
+        description: Total circuit layout height
+        unit: µm
+        maximum:
+          value: any
+    tool:
+      magic_area
+
+  magic_drc:
+    description: Magic DRC
+    display: Magic DRC
+    spec:
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+      magic_drc:
+        gds_flatten: true
+
+  netgen_lvs:
+    description: Netgen LVS
+    display: Netgen LVS
+    spec:
+      lvs_errors:
+        maximum:
+          value: 0
+    tool:
+      netgen_lvs:
+        script: run_lvs.tcl
+
+  klayout_drc_full:
+    description: KLayout DRC full
+    display: KLayout DRC full
+    spec:
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+        klayout_drc:
+            args: ['-rd', 'feol=true', '-rd', 'beol=true', '-rd', 'offgrid=true']
+

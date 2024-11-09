@@ -267,15 +267,15 @@ rect 5330 -1848 5491 -1705
 rect 5330 -1926 5339 -1848
 rect 5479 -1926 5491 -1848
 rect 5330 -2015 5491 -1926
-use sky130_fd_pr__diode_pw2nd_05v5_37RBXE  sky130_fd_pr__diode_pw2nd_05v5_37RBXE_0
+use sky130_fd_pr__diode_pw2nd_05v5_37RBXE  sky130_fd_pr__diode_pw2nd_05v5_37RBXE_0 paramcells
 timestamp 1713221383
 transform 0 1 5408 -1 0 -1887
 box -183 -208 183 208
-use sky130_fd_pr__nfet_01v8_MG6U6H  sky130_fd_pr__nfet_01v8_MG6U6H_0
+use sky130_fd_pr__nfet_01v8_MG6U6H  sky130_fd_pr__nfet_01v8_MG6U6H_0 paramcells
 timestamp 1713221383
 transform 1 0 5880 0 1 -1500
 box -496 -310 496 310
-use sky130_fd_pr__nfet_g5v0d10v5_EEVBR7  sky130_fd_pr__nfet_g5v0d10v5_EEVBR7_0
+use sky130_fd_pr__nfet_g5v0d10v5_EEVBR7  sky130_fd_pr__nfet_g5v0d10v5_EEVBR7_0 paramcells
 timestamp 1713228232
 transform -1 0 2799 0 1 -1705
 box -528 -458 528 458
@@ -283,11 +283,11 @@ use sky130_fd_pr__nfet_g5v0d10v5_EEVBR7  sky130_fd_pr__nfet_g5v0d10v5_EEVBR7_1
 timestamp 1713228232
 transform -1 0 2799 0 1 -919
 box -528 -458 528 458
-use sky130_fd_pr__pfet_01v8_J2L9Q3  sky130_fd_pr__pfet_01v8_J2L9Q3_0
+use sky130_fd_pr__pfet_01v8_J2L9Q3  sky130_fd_pr__pfet_01v8_J2L9Q3_0 paramcells
 timestamp 1713221383
 transform 1 0 5880 0 1 -821
 box -496 -319 496 319
-use sky130_fd_pr__pfet_g5v0d10v5_YHAZV5  sky130_fd_pr__pfet_g5v0d10v5_YHAZV5_0
+use sky130_fd_pr__pfet_g5v0d10v5_YHAZV5  sky130_fd_pr__pfet_g5v0d10v5_YHAZV5_0 paramcells
 timestamp 1713221383
 transform 1 0 1663 0 -1 -1462
 box -558 -397 558 397

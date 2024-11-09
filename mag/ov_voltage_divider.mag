@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1713724750
+timestamp 1726593208
 << pwell >>
 rect -1259 717 12781 18089
 rect -1259 -369 12733 717
@@ -371,19 +371,19 @@ rect 14003 131 14080 247
 rect 13361 89 14080 131
 rect 13151 79 14080 89
 rect 12889 -111 12961 -99
-use sky130_fd_pr__diode_pw2nd_05v5_F6RBXN  sky130_fd_pr__diode_pw2nd_05v5_F6RBXN_0
+use sky130_fd_pr__diode_pw2nd_05v5_F6RBXN  sky130_fd_pr__diode_pw2nd_05v5_F6RBXN_0 paramcells
 timestamp 1713221383
 transform 1 0 13970 0 1 189
 box -183 -208 183 208
-use sky130_fd_pr__nfet_g5v0d10v5_SB5CJ8  sky130_fd_pr__nfet_g5v0d10v5_SB5CJ8_0
+use sky130_fd_pr__nfet_g5v0d10v5_SB5CJ8  sky130_fd_pr__nfet_g5v0d10v5_SB5CJ8_0 paramcells
 timestamp 1713221383
 transform 1 0 13261 0 1 189
 box -528 -558 528 558
-use sky130_fd_pr__res_xhigh_po_1p41_H3F4MM  sky130_fd_pr__res_xhigh_po_1p41_H3F4MM_0
+use sky130_fd_pr__res_xhigh_po_1p41_H3F4MM  sky130_fd_pr__res_xhigh_po_1p41_H3F4MM_0 paramcells
 timestamp 1713221383
 transform 0 -1 5761 1 0 8845
 box -9024 -5582 9024 5582
-use sky130_fd_pr__res_xhigh_po_1p41_LV9PDH  sky130_fd_pr__res_xhigh_po_1p41_LV9PDH_0
+use sky130_fd_pr__res_xhigh_po_1p41_LV9PDH  sky130_fd_pr__res_xhigh_po_1p41_LV9PDH_0 paramcells
 timestamp 1713221383
 transform 0 -1 -482 1 0 8845
 box -9024 -557 9024 557
@@ -568,4 +568,6 @@ flabel pwell 3953 215 4350 465 0 FreeSans 1280 0 0 0 2
 flabel pwell 7709 215 8106 465 0 FreeSans 1280 0 0 0 1
 flabel metal1 -1259 -1191 -859 -791 3 FreeSans 3200 0 -1200 0 avss
 port 18 e
+<< properties >>
+string MASKHINTS_HVI -1248 17909 12770 18077 -1248 -388 12770 -220
 << end >>
