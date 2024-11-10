@@ -781,76 +781,76 @@ C {trans_gate_mux.sym} 755 -265 0 0 {name=x30}
 C {sky130_fd_pr/lvsdiode.sym} 1580 -730 0 0 {name=D1
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {sky130_fd_pr/lvsdiode.sym} 1720 -730 0 0 {name=D2
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {devices/lab_pin.sym} 1560 -780 0 0 {name=p148 sig_type=std_logic lab=vtrip_0}
 C {devices/lab_pin.sym} 1560 -680 0 0 {name=p149 sig_type=std_logic lab=vss}
 C {sky130_fd_pr/lvsdiode.sym} 1580 -600 0 0 {name=D3
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {sky130_fd_pr/lvsdiode.sym} 1720 -600 0 0 {name=D4
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {devices/lab_pin.sym} 1560 -650 0 0 {name=p150 sig_type=std_logic lab=vtrip_0_b}
 C {devices/lab_pin.sym} 1560 -550 0 0 {name=p151 sig_type=std_logic lab=vss}
 C {sky130_fd_pr/lvsdiode.sym} 1940 -730 0 0 {name=D5
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {sky130_fd_pr/lvsdiode.sym} 2080 -730 0 0 {name=D6
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {devices/lab_pin.sym} 1920 -780 0 0 {name=p152 sig_type=std_logic lab=vtrip_1}
 C {devices/lab_pin.sym} 1920 -680 0 0 {name=p153 sig_type=std_logic lab=vss}
 C {sky130_fd_pr/lvsdiode.sym} 1940 -600 0 0 {name=D7
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {sky130_fd_pr/lvsdiode.sym} 2080 -600 0 0 {name=D8
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {devices/lab_pin.sym} 1920 -650 0 0 {name=p154 sig_type=std_logic lab=vtrip_1_b}
 C {devices/lab_pin.sym} 1920 -550 0 0 {name=p155 sig_type=std_logic lab=vss}
 C {sky130_fd_pr/lvsdiode.sym} 1580 -470 0 0 {name=D9
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {devices/lab_pin.sym} 1560 -520 0 0 {name=p156 sig_type=std_logic lab=vtrip_2}
 C {devices/lab_pin.sym} 1560 -420 0 0 {name=p157 sig_type=std_logic lab=vss}
 C {sky130_fd_pr/lvsdiode.sym} 1580 -340 0 0 {name=D11
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {devices/lab_pin.sym} 1560 -390 0 0 {name=p158 sig_type=std_logic lab=vtrip_2_b}
 C {devices/lab_pin.sym} 1560 -290 0 0 {name=p159 sig_type=std_logic lab=vss}
 C {sky130_fd_pr/lvsdiode.sym} 1940 -470 0 0 {name=D10
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {devices/lab_pin.sym} 1920 -520 0 0 {name=p160 sig_type=std_logic lab=vtrip_3}
 C {devices/lab_pin.sym} 1920 -420 0 0 {name=p161 sig_type=std_logic lab=vss}
 C {sky130_fd_pr/lvsdiode.sym} 1940 -340 0 0 {name=D12
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
 C {devices/lab_pin.sym} 1920 -390 0 0 {name=p162 sig_type=std_logic lab=vtrip_3_b}
 C {devices/lab_pin.sym} 1920 -290 0 0 {name=p163 sig_type=std_logic lab=vss}

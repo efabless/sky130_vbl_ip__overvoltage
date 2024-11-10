@@ -228,7 +228,7 @@ C {devices/iopin.sym} 150 -180 0 1 {name=p2 lab=dvss}
 C {sky130_fd_pr/lvsdiode.sym} 750 -250 0 0 {name=D3
 model=diode_pw2nd_05v5
 area=0.315e12
-pj=2.3e6
+perim=2.3e6
 }
 C {devices/lab_pin.sym} 750 -200 0 0 {name=p11 sig_type=std_logic lab=dvss}
 C {devices/lab_pin.sym} 750 -300 0 0 {name=p12 sig_type=std_logic lab=in}

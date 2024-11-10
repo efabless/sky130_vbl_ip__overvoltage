@@ -848,17 +848,17 @@ spiceprefix=X
 C {sky130_fd_pr/lvsdiode.sym} 1550 -250 0 0 {name=D3
 model=diode_pw2nd_05v5
 area=0.315e12
-pj=2.3e6
+perim=2.3e6
 }
 C {sky130_fd_pr/lvsdiode.sym} 1870 -250 0 0 {name=D1
 model=diode_pw2nd_05v5
 area=0.315e12
-pj=2.3e6
+perim=2.3e6
 }
 C {sky130_fd_pr/lvsdiode.sym} 1710 -250 0 0 {name=D2
 model=diode_pw2nd_05v5
 area=0.315e12
-pj=2.3e6
+perim=2.3e6
 }
 C {devices/lab_pin.sym} 1710 -300 0 0 {name=p23 sig_type=std_logic lab=ena}
 C {devices/lab_pin.sym} 1870 -300 0 0 {name=p24 sig_type=std_logic lab=vref

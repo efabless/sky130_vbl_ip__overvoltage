@@ -313,8 +313,8 @@ flabel metal3 5330 -2015 5491 -1926 0 FreeSans 1600 0 0 0 in
 port 3 nsew
 flabel metal1 5237 -2313 6341 -2244 0 FreeSans 1600 0 0 0 dvss
 port 7 nsew
-flabel dnwell 5384 -1140 6376 -502 0 FreeSans 1600 0 0 0 M2
-flabel dnwell 5384 -1810 6376 -1190 0 FreeSans 1600 0 0 0 M1
+flabel space 5384 -1140 6376 -502 0 FreeSans 1600 0 0 0 M2
+flabel space 5384 -1810 6376 -1190 0 FreeSans 1600 0 0 0 M1
 flabel metal1 5421 -409 6341 -340 0 FreeSans 1600 0 0 0 dvdd
 port 2 nsew
 << end >>

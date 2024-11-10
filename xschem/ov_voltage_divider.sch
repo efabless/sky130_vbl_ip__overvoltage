@@ -426,5 +426,5 @@ mult=96
 C {sky130_fd_pr/lvsdiode.sym} 270 -250 0 0 {name=D1
 model=diode_pw2nd_05v5
 area=3.15e11
-pj=2.3e6
+perim=2.3e6
 }
